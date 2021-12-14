@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_segment/src/segment_config.dart';
 import 'package:flutter_segment/src/segment_method_channel.dart';
 
@@ -12,51 +13,51 @@ abstract class SegmentPlatform {
   static SegmentPlatform instance = SegmentMethodChannel();
 
   Future<void> config({
-    required SegmentConfig options,
+    @required SegmentConfig options,
   }) {
     throw UnimplementedError('config() has not been implemented.');
   }
 
   Future<void> identify({
-    String? userId,
-    required Map<String, dynamic> traits,
-    required Map<String, dynamic> options,
+    String userId,
+    @required Map<String, dynamic> traits,
+    @required Map<String, dynamic> options,
   }) {
     throw UnimplementedError('identify() has not been implemented.');
   }
 
   Future<void> track({
-    required String eventName,
-    required Map<String, dynamic> properties,
-    required Map<String, dynamic> options,
+    @required String eventName,
+    @required Map<String, dynamic> properties,
+    @required Map<String, dynamic> options,
   }) {
     throw UnimplementedError('track() has not been implemented.');
   }
 
   Future<void> screen({
-    required String screenName,
-    required Map<String, dynamic> properties,
-    required Map<String, dynamic> options,
+    @required String screenName,
+    @required Map<String, dynamic> properties,
+    @required Map<String, dynamic> options,
   }) {
     throw UnimplementedError('screen() has not been implemented.');
   }
 
   Future<void> group({
-    required String groupId,
-    required Map<String, dynamic> traits,
-    required Map<String, dynamic> options,
+    @required String groupId,
+    @required Map<String, dynamic> traits,
+    @required Map<String, dynamic> options,
   }) {
     throw UnimplementedError('group() has not been implemented.');
   }
 
   Future<void> alias({
-    required String alias,
-    required Map<String, dynamic> options,
+    @required String alias,
+    @required Map<String, dynamic> options,
   }) {
     throw UnimplementedError('alias() has not been implemented.');
   }
 
-  Future<String?> get getAnonymousId {
+  Future<String> get getAnonymousId {
     throw UnimplementedError('getAnonymousId() has not been implemented.');
   }
 

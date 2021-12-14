@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_segment/src/segment_config.dart';
 import 'package:flutter_segment/src/segment_default_options.dart';
 import 'package:flutter_segment/src/segment_platform_interface.dart';
@@ -11,9 +12,9 @@ class Segment {
   static SegmentPlatform get _segment => SegmentPlatform.instance;
 
   static Future<void> identify({
-    String? userId,
-    Map<String, dynamic>? traits,
-    Map<String, dynamic>? options,
+    String userId,
+    Map<String, dynamic> traits,
+    Map<String, dynamic> options,
   }) {
     return _segment.identify(
       userId: userId,
@@ -23,7 +24,7 @@ class Segment {
   }
 
   static Future<void> config({
-    required SegmentConfig options,
+    @required SegmentConfig options,
   }) {
     return _segment.config(
       options: options,
@@ -31,9 +32,9 @@ class Segment {
   }
 
   static Future<void> track({
-    required String eventName,
-    Map<String, dynamic>? properties,
-    Map<String, dynamic>? options,
+    @required String eventName,
+    Map<String, dynamic> properties,
+    Map<String, dynamic> options,
   }) {
     return _segment.track(
       eventName: eventName,
@@ -43,9 +44,9 @@ class Segment {
   }
 
   static Future<void> screen({
-    required String screenName,
-    Map<String, dynamic>? properties,
-    Map<String, dynamic>? options,
+    @required String screenName,
+    Map<String, dynamic> properties,
+    Map<String, dynamic> options,
   }) {
     return _segment.screen(
       screenName: screenName,
@@ -55,9 +56,9 @@ class Segment {
   }
 
   static Future<void> group({
-    required String groupId,
-    Map<String, dynamic>? traits,
-    Map<String, dynamic>? options,
+    @required String groupId,
+    Map<String, dynamic> traits,
+    Map<String, dynamic> options,
   }) {
     return _segment.group(
       groupId: groupId,
@@ -67,8 +68,8 @@ class Segment {
   }
 
   static Future<void> alias({
-    required String alias,
-    Map<String, dynamic>? options,
+    @required String alias,
+    Map<String, dynamic> options,
   }) {
     return _segment.alias(
       alias: alias,
@@ -76,7 +77,7 @@ class Segment {
     );
   }
 
-  static Future<String?> get getAnonymousId {
+  static Future<String> get getAnonymousId {
     return _segment.getAnonymousId;
   }
 

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class SegmentConfig {
   final String writeKey;
   final bool trackApplicationLifecycleEvents;
@@ -5,7 +7,7 @@ class SegmentConfig {
   final bool debug;
 
   SegmentConfig({
-    required this.writeKey,
+    @required this.writeKey,
     this.trackApplicationLifecycleEvents = false,
     this.amplitudeIntegrationEnabled = false,
     this.debug = false,
