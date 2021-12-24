@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_segment/src/segment_config.dart';
 import 'package:flutter_segment/src/segment_platform_interface.dart';
@@ -6,7 +7,7 @@ const MethodChannel _channel = MethodChannel('flutter_segment');
 
 class SegmentMethodChannel extends SegmentPlatform {
   Future<void> config({
-    required SegmentConfig options,
+    @required SegmentConfig options,
   }) async {
     try {
       await _channel.invokeMethod('config', {
@@ -18,9 +19,9 @@ class SegmentMethodChannel extends SegmentPlatform {
   }
 
   Future<void> identify({
-    String? userId,
-    required Map<String, dynamic> traits,
-    required Map<String, dynamic> options,
+    String userId,
+    @required Map<String, dynamic> traits,
+    @required Map<String, dynamic> options,
   }) async {
     try {
       await _channel.invokeMethod('identify', {
@@ -34,9 +35,9 @@ class SegmentMethodChannel extends SegmentPlatform {
   }
 
   Future<void> track({
-    required String eventName,
-    required Map<String, dynamic> properties,
-    required Map<String, dynamic> options,
+    @required String eventName,
+    @required Map<String, dynamic> properties,
+    @required Map<String, dynamic> options,
   }) async {
     try {
       await _channel.invokeMethod('track', {
@@ -50,9 +51,9 @@ class SegmentMethodChannel extends SegmentPlatform {
   }
 
   Future<void> screen({
-    required String screenName,
-    required Map<String, dynamic> properties,
-    required Map<String, dynamic> options,
+    @required String screenName,
+    @required Map<String, dynamic> properties,
+    @required Map<String, dynamic> options,
   }) async {
     try {
       await _channel.invokeMethod('screen', {
@@ -66,9 +67,9 @@ class SegmentMethodChannel extends SegmentPlatform {
   }
 
   Future<void> group({
-    required String groupId,
-    required Map<String, dynamic> traits,
-    required Map<String, dynamic> options,
+    @required String groupId,
+    @required Map<String, dynamic> traits,
+    @required Map<String, dynamic> options,
   }) async {
     try {
       await _channel.invokeMethod('group', {
@@ -82,8 +83,8 @@ class SegmentMethodChannel extends SegmentPlatform {
   }
 
   Future<void> alias({
-    required String alias,
-    required Map<String, dynamic> options,
+    @required String alias,
+    @required Map<String, dynamic> options,
   }) async {
     try {
       await _channel.invokeMethod('alias', {
@@ -95,7 +96,7 @@ class SegmentMethodChannel extends SegmentPlatform {
     }
   }
 
-  Future<String?> get getAnonymousId async {
+  Future<String> get getAnonymousId async {
     return await _channel.invokeMethod('getAnonymousId');
   }
 
